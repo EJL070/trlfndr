@@ -1,8 +1,8 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
 const listener = async(req,res)=>{
-   
-    return new Response(req.url);
+    const url = req.url.split("/")[3]
+    return new Response(url);
     
 }
 
