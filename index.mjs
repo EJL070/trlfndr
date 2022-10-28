@@ -1,38 +1,21 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
+const home = await Deno.readFile("./index.html");
 
-const listener = async(req,res)=>{
-    const url = req.url.split("/")[3]
-    return new Response(url);
+const listener = async(req,res,content)=>{
+    const url = req.url.split("/")[3];
+    if(url === "style.css"){
+        res = await Deno.readFile("./style.css");
+        content = "text/css";
+    }
+    else {
+        res = home;
+        content = "text/html; charset=utf-8"
+    }
+    return new Response(res,{headers:{"content-type":content}});
     
 }
 
 
-//   if (pathname.startsWith("/style.css")) {
-//     // Read the style.css file from the file system.
-//     const file = await Deno.readFile("./style.css");
-//     // Respond to the request with the style.css file.
-//     return new Response(file, {
-//       headers: {
-//         "content-type": "text/css",
-//       },
-//     });
-//   }
 
-//   return new Response(
-//     `<html>
-//       <head>
-//         <link rel="stylesheet" href="style.css" />
-//       </head>
-//       <body>
-//         <h1>Example</h1>
-//       </body>
-//     </html>`,
-//     {
-//       headers: {
-//         "content-type": "text/html; charset=utf-8",
-//       },
-//     },
-//   );
-// }
 
 serve(listener);
