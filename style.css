@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Bowlby+One+SC&family=Cabin+Sketch:wght@400;700&family=Coming+Soon&family=Fredoka+One&family=Itim&family=Lilita+One&family=Mali:wght@500&family=Nothing+You+Could+Do&family=Pacifico&family=Poiret+One&family=Walter+Turncoat&display=swap');
+:root{    
+    --alabaster: hsla(39, 38%, 91%, 1);
+    --jet: hsla(315, 4%, 20%, 1);
+    --metallic-seaweed: hsla(185, 48%, 38%, 1);
+    --mandarin: hsla(19, 100%, 58%, 1);
+    --fashion-fuchsia: hsla(322, 92%, 53%, 1);
+ 
+  background-position: 50% 60%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    margin: 0;
+    place-items: center;
+    place-content: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    background-color: var(--alabaster);
+}
+
+.text{
+    font-family:'Cabin Sketch';
+    font-size:6vmin;
+    color:black;
+ 
+}
